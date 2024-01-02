@@ -1,0 +1,81 @@
+<p>sample works! {{c}}</p>
+
+
+
+<button (click) ="test()">Click Me!</button>
+
+<h2>Two Way Data Binding</h2>
+<input type="text" value="{{nm}}"/>
+<p>{{message}}</p>
+<p>NG ngModel</p>
+<input type="text1" [(ngModel)] = "nm"/>
+
+<button (click)="test1()">Change Name</button>
+<p>{{nm}}</p>
+
+<P *ngFor="let m of n; index as i">count {{n[2]}} {{i+1}}</P>
+
+<table border="2">
+
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>age</td>
+        <td>grade</td>
+        <td>subjects</td> 
+        <td>address</td>
+    
+
+    </tr>
+
+    <tr *ngFor="let a of studentData;">
+        <td>{{a.id}}</td>
+        <td>{{a.name}}</td>
+        <td>{{a.age}}</td>
+        <td>{{a.grade}}</td>
+        <td>{{a.subjects}}</td>
+        <td *ngFor="let studentData of a.address">{{studentData.street}}, {{studentData.city}}</td>
+        
+    </tr>
+</table>
+
+<p></p>
+<table border="2">
+    <tr>
+        <td>name</td>
+        <td>subject1</td>
+        <td>subject2</td>
+        <td>subject3</td>
+        <td>Average</td>
+        <td>performance</td>
+        <td>grade</td>
+    </tr>
+
+    <tr *ngFor="let b of students" >
+        <td>{{b.name}}</td>
+        <td>{{b.subject1}}</td>
+        <td>{{b.subject2}}</td>
+        <td>{{b.subject3}}</td>
+        <td>{{calculateAverage(b.subject1, b.subject2, b.subject3)}}</td>
+        <td *ngIf="calculateAverage(b.subject1,b.subject2, b.subject3) >= 80">good</td>
+        <td *ngIf="calculateAverage(b.subject1,b.subject2, b.subject3) < 80">average</td>
+       <!-- <td *ngIf="calculateAverage(b.subject1,b.subject2, b.subject3) >= 80">A</td>
+        <td *ngIf="calculateAverage(b.subject1,b.subject2, b.subject3) < 50">C</td>
+        <td *ngIf="calculateAverage(b.subject1, b.subject2, b.subject3) >= 50 && calculateAverage(b.subject1, b.subject2, b.subject3) < 80">B</td>-->
+        <td>{{getGrade(calculateAverage(b.subject1,b.subject2, b.subject3))}}</td>
+        
+        
+        
+    </tr>
+</table>
+
+<p>{{"hello world" | uppercase}}</p>
+<p>{{"hello world" | firstpipe}}</p>
+<p>{{"world" | secondPipe: 'hello': 'sanjay'}}</p>
+<h1>Service</h1>
+<p>{{srv}}</p>
+<p>{{jdata.page_title}}</p>
+
+
+
+

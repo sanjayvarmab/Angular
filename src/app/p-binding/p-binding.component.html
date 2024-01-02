@@ -1,0 +1,12 @@
+<p>p-binding works!</p>
+<button [hidden]=isd>Submit</button>
+<h1>image</h1>
+<!-- <img src="{{path}}">
+<img [src]=path> -->
+<h1 [class]={first:cbool}>Class Binding</h1> <!-- -->
+<h1 [class]=cname>Class Binding Boolean</h1>
+<h1 [class]="cbool?'first':'second'">Class Binding Boolean</h1> <!--best -->
+<h1 [class]="cbool?cname:'second'">Class Binding Boolean</h1>
+<h1 [class.third]=tbool>Class Binding Boolean</h1> <!--best-->
+
+<h1>Event Binding</h1>
